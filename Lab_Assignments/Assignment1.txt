@@ -1,0 +1,111 @@
+﻿/* The algorithm allows the user to create an estimate of the cost to build a table.  
+The algorithm will be made up of a menu driven algorithm that will continue until the user specifically 
+states that they do not want any additional estimates. */
+
+LET tableCounter is a positive natural number that holds the count of estimated tables.
+LET pie is a floating number that holds a value of mathematical pie as 3.14159.
+LET totalCost is a floating number that holds the sum of all estimates costs.
+LET choice is a natural number that represents the choice of the user.
+LET length is a floating number that holds the length measurenment of a table.
+LET width is a floating number that holds the width measurenment of a table.
+LET diameter is a floating number that holds the diameter measurenment of a circular table.
+LET tableCost is a floating number that holds the cost of a single table.
+LET area is a floating number that holds the area a table.
+
+START
+	tableCounter <-- 0
+	pie <-- 3.14159
+	totalCost <-- 0
+	DO
+		DISPLAY "Welcome to Tables - Yours One Stop Table Shop"
+		DISPLAY "Abrham Getchew - Master Table Builder"
+		DISPLAY "What shape of table do you want to build?"
+		DISPLAY "1. Rectangular"
+		DISPLAY "2. Square"
+		DISPLAY "3. Circular"
+		DISPLAY "4. End"
+		DISPLAY "Enter menu entry: "
+		ACCEPT choice
+		WHILE choice is not a number or choice > 4 or choice < 1
+			DISPLAY "Error – Invalid Entry. Please reenter a valid value"
+			DISPLAY "What shape of table do you want to build?"
+			DISPLAY "1. Rectangular"
+			DISPLAY "2. Square"
+			DISPLAY "3. Circular"
+			DISPLAY "4. End"
+			DISPLAY "Enter menu entry: "
+			ACCEPT choice
+		END WHILE
+		SWITCH choice TO:
+			CASE 1:
+				DISPLAY "Enter the length of the table (in inches): "
+				ACCEPT length
+				WHILE length < 1
+					DISPLAY "Error – Length must be greater than zero. Please reenter a valid value"
+					ACCEPT length
+				END WHILE
+				DISPLAY "Enter the width of the table (in inches): "
+				ACCEPT width
+				WHILE width < 1
+					DISPLAY "Error – Width must be greater than zero. Please reenter a valid value"
+					ACCEPT width
+				END WHILE
+				area <-- length * width
+				tableCounter <-- tableCounter + 1
+			CASE 2:
+				DISPLAY "Enter the length of the table (in inches): "
+				ACCEPT length
+				WHILE length < 1
+					DISPLAY "Error – Length must be greater than zero. Please reenter a valid value"
+					ACCEPT length
+				END WHILE
+				area <-- length * length
+				tableCounter <-- tableCounter + 1
+			CASE 3: 
+				DISPLAY "Enter the diameter of the table (in inches):  "
+				ACCEPT diameter 
+				WHILE diameter < 1
+					DISPLAY "Error – diameter must be greater than zero. Please reenter a valid value"
+					ACCEPT diameter 
+				END WHILE
+				area <-- (diameter * diameter * pie) / 4
+				tableCounter <-- tableCounter + 1
+			CASE 4:
+				IF tableCounter = 1 THEN
+					DISPLAY "The total cost of 1 table you estimated is $" + totalCost
+					DISPLAY "Thank you for using the table cost estimation program!"
+					DISPLAY "Goodbye!!!"
+					STOP
+				ELSE
+					DISPLAY "The total cost of the " + tableCounter + " tables you estimated is $" + totalCost
+					DISPLAY "Thank you for using the table cost estimation program!"
+					DISPLAY "Goodbye!!!"	
+					STOP	
+				END IF		
+		END SWITCH
+		DISPLAY "What type of material do you want to use?"
+		DISPLAY "1.Laminate ($0.125 per square inch)"
+		DISPLAY "2.Oak ($0.25 per square inch)"
+		DISPLAY "Enter menu entry: "
+		ACCEPT choice
+		WHILE choice is not a number or choice > 2 or choice < 1
+			DISPLAY "Error – Invalid Entry. Please reenter a valid value"
+			DISPLAY "1.Laminate ($0.125 per square inch)"
+			DISPLAY "2.Oak ($0.25 per square inch)"
+			DISPLAY "Enter menu entry: "
+			ACCEPT choice
+		END WHILE
+		SWITCH choice TO:
+			CASE 1:
+				tableCost <-- area * 0.125
+				totalCost <-- totalCost + tableCost
+				DISPLAY "The area of the table is " + area + " square inches"
+				DISPLAY "The table will be made of laminate"
+			CASE 2:
+				tableCost <-- area * 0.25
+				totalCost <-- totalCost + tableCost
+				DISPLAY "The area of the table is " + area + " square inches"
+				DISPLAY "The table will be made of oak"
+		END SWITCH
+		DISPLAY "The cost of this table is $" + tableCost 
+WHILE 1 = 1
