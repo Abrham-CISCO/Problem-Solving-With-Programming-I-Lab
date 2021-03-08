@@ -15,7 +15,7 @@ int main()
         do
         {
             cout << "Welcome to Tables - Yours One Stop Table Shop"<<endl;
-            cout << "Abrham Getachew - Master Table Builder"<<endl;
+            cout << "Abrham Getachew and Hiwot Workneh - Master Table Builder"<<endl;
             cout << "What shape of table do you want to build?"<<endl;
             cout << "1. Rectangular"<<endl;
             cout << "2. Square"<<endl;
@@ -25,7 +25,7 @@ int main()
             cin >> choice;
             if(choice>4 || choice <1)
             {
-                cout<<"Error – Invalid Entry. Please reenter a valid value"<<endl;
+                cout<<"Error â€“ Invalid Entry. Please reenter a valid value"<<endl;
             }
         }while(choice>4 || choice <1);
         switch(choice)
@@ -37,7 +37,7 @@ int main()
                     cin >> length;
                     if(length < 1)
                     {
-                        cout <<  "Error – Length must be greater than zero. Please reenter a valid value";
+                        cout <<  "Error â€“ Length must be greater than zero. Please reenter a valid value";
                     }
                 }while(length < 1);
                 do
@@ -46,7 +46,7 @@ int main()
                     cin >> width;
                     if(width < 1)
                     {
-                        cout <<  "Error – Length must be greater than zero. Please reenter a valid value";
+                        cout <<  "Error â€“ Length must be greater than zero. Please reenter a valid value";
                     }
                 }while(width < 1);
                 area = length * width;
@@ -59,7 +59,7 @@ int main()
                         cin >> length;
                         if(length < 1)
                         {
-                            cout <<  "Error – Length must be greater than zero. Please reenter a valid value";
+                            cout <<  "Error â€“ Length must be greater than zero. Please reenter a valid value";
                         }
                     }while(length < 1);
                     area = length * length;
@@ -71,7 +71,7 @@ int main()
                         cin >> diameter;
                         if(diameter < 1)
                         {
-                            cout <<  "Error – diameter must be greater than zero. Please reenter a valid value";
+                            cout <<  "Error â€“ diameter must be greater than zero. Please reenter a valid value";
                         }
                     }while(diameter < 1);
                     area = (diameter * diameter * PI) / 4;
@@ -101,7 +101,7 @@ int main()
                 cin >> choice;
                 if(choice > 2 || choice < 1)
                 {
-                    cout << "Error – Invalid Entry. Please reenter a valid value"<<endl;
+                    cout << "Error â€“ Invalid Entry. Please reenter a valid value"<<endl;
                     cout << "1.Laminate ($0.125 per square inch)"<<endl;
                     cout << "2.Oak ($0.25 per square inch)"<<endl;
                     cout << "Enter menu entry: ";
