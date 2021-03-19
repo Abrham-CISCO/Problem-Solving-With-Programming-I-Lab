@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
 const int SIZE = 100;
 int main()
@@ -41,25 +40,3 @@ int main()
     cout << "The Largest Word is: "<<largestWord;
     return 0;
 }
-
-    /*do
-    {
-        if(invalidInpt)
-        {
-                    invalidInpt = false;
-            cout << "Invalid Input! a word can not contain a character other than elements of alphabet!"<<endl;
-
-        }
-        cout << "Enter a string: ";
-        for(int l=0; l<SIZE; l++) inpt[l] = ' ';
-        cin.getline(inpt, SIZE);
-        while(inpt[i] != 0)
-        {
-            if(!(inpt[i] > 'a' && inpt[i] < 'z' || inpt[i] > 'A' && inpt[i] < 'Z' || inpt[i] == ' '))
-            {
-                invalidInpt = true;
-            }
-            i++;
-        }
-
-    }while(invalidInpt);*/
